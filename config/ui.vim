@@ -7,7 +7,6 @@ syntax on
 set shortmess+=I
 
 set colorcolumn=+1 " Show textwidth limit
-set cursorline     " Highlight currently focused line
 set number         " Show line numbers
 set laststatus=2   " Always show status line
 
