@@ -15,10 +15,8 @@ nnoremap <C-n> :tabnext<CR>
 inoremap jj <Esc>
 
 " Fuzzy-finder shortcuts
-nnoremap <Space> :CtrlP<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>t :CtrlPTag<CR>
-nnoremap <Leader><Space> :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <Space> :CommandT<CR>
+nnoremap <Leader><Space> :CommandTFlush<CR>:CommandT<CR>
 nnoremap <Leader>? :FufHelp<CR>
 
 " Open alternate/associated files (e.g. headers or specs)
