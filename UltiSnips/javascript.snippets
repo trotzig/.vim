@@ -21,3 +21,17 @@ else:
   $0
 },
 endsnippet
+
+
+# Generates a `getDefaultProps` function, useful for React components.
+snippet gdp "getDefaultProps function" b
+/**
+ * @return {Object}
+ */
+getDefaultProps: function() {
+  return {
+    ${VISUAL}$0
+  };
+},
+
+endsnippet
