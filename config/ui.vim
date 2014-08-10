@@ -14,8 +14,8 @@ set wildmenu       " Tab-completion menu for command mode
 set wildignore+=*.o,*.pyc,*/tmp/*,*.swp,*.zip
 set wildmode=list:longest,full
 
-" Vertically center cursor in middle of buffer
-set scrolloff=999
+" Start scrolling page when 10 lines from bottom/top
+set scrolloff=10
 
 " Allow interaction using mouse
 set mouse=a
