@@ -8,7 +8,7 @@ git://github.com/edsono/vim-matchit.git
 git://github.com/jc00ke/nerdcommenter.git 2.2.2
 git://github.com/scrooloose/nerdtree.git 4.2.0
 git://github.com/ervandew/supertab.git 2.1
-git://github.com/scrooloose/syntastic.git 9057e3ef
+git://github.com/scrooloose/syntastic.git
 git://github.com/nanki/treetop.vim.git
 git://github.com/zaiste/tmux.vim.git
 git://github.com/tpope/vim-abolish.git
@@ -34,7 +34,6 @@ git://github.com/tpope/vim-unimpaired.git v1.2
 git://github.com/noprompt/vim-yardoc.git
 git://github.com/wincent/Command-T.git
 git://github.com/SirVer/ultisnips.git
-git://github.com/honza/vim-snippets.git
 git://github.com/mxw/vim-jsx
 git://github.com/pangloss/vim-javascript
 git://github.com/hail2u/vim-css3-syntax.git
