@@ -142,3 +142,46 @@ def formatVariableName(path):
 snip.rv = formatVariableName(t[1])
 ` = require('${1}');$0
 endsnippet
+
+snippet des "describe() block" b
+describe('${1}', () => {
+  ${0:${VISUAL}}
+});
+endsnippet
+
+snippet con "context() block" b
+context('${1}', () => {
+  ${0:${VISUAL}}
+});
+endsnippet
+
+snippet bef "beforeEach() block" b
+beforeEach(() => {
+  ${0:${VISUAL}}
+});
+endsnippet
+
+snippet aft "afterEach() block" b
+afterEach(() => {
+  ${0:${VISUAL}}
+});
+endsnippet
+
+snippet it "it() block" b
+it('${1}', () => {
+  ${0:${VISUAL}}
+});
+endsnippet
+
+snippet exp "expect() assertion" b
+expect(${1})${2}.to${3}(${0:${VISUAL}});
+endsnippet
+
+# Subject pattern
+snippet sub "this.subject" b
+this.subject = () => Utils.render(<${1:`!p snip.rv = pascal_case_basename(snip.basename)`} {...this.props} />);$0
+endsnippet
+
+snippet gim "this.getIntlMessage('...')" w
+this.getIntlMessage('`!p snip.rv = pascal_case_basename(snip.basename)`.${1}')${0}
+endsnippet
