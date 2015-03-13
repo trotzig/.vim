@@ -25,7 +25,6 @@ let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers  = ['jsxhint', 'jscs']
-let g:syntastic_javascript_jscs_exec = 'jsxcs'
 
 " Highlight the sign column same colour as the background
 autocmd BufWinEnter * call InitGutter()
