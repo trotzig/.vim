@@ -36,3 +36,4 @@ git://github.com/SirVer/ultisnips.git
 git://github.com/mxw/vim-jsx
 git://github.com/pangloss/vim-javascript
 git://github.com/hail2u/vim-css3-syntax.git
+git://github.com/tpope/vim-projectionist.git
