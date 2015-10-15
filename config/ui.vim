@@ -11,7 +11,7 @@ set number         " Show line numbers
 set laststatus=2   " Always show status line
 
 set wildmenu       " Tab-completion menu for command mode
-set wildignore+=*.o,*.pyc,*/tmp/*,*.swp,*.zip
+set wildignore+=*.o,*.pyc,*/tmp/*,*.swp,*.zip,**/node_modules/**
 set wildmode=list:longest,full
 
 " Start scrolling page when 10 lines from bottom/top
