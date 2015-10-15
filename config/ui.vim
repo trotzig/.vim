@@ -68,6 +68,11 @@ set noswapfile  " No swap files
 " - Quitting vim when there any buffers with unsaved changes (with :qa)
 set confirm
 
+" Use different cursors in different modes (input etc)
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
