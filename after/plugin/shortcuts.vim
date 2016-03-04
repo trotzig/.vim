@@ -1,5 +1,7 @@
 " Store all custom shortcuts here so there is one location to reference
 
+nnoremap <Leader>j :ImportJSImport<CR>
+
 " Quick window navigation
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
