@@ -38,24 +38,24 @@ render: function() {
 }
 endsnippet
 
-snippet cc "createClass"
-var ${1:`!p snip.rv = ''.join(x.title() for x in re.sub('\.js$', '', snip.basename or 'ModuleName').split('_'))`} = React.createClass({
-  /**
-   * @return {Object}
-   */
-  render: function() {
-    return (
-      $0
-    );
-  }
+snippet cc "createClass" b
+const ${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`} = React.createClass({
+	/**
+	 * @return {Object}
+	 */
+	render() {
+		return (
+			$0
+		);
+	}
 });
 
 module.exports = $1;
 endsnippet
 
 snippet cdm "componentDidMount" b
-componentDidMount: function() {
-  $0
+componentDidMount() {
+	$0
 },
 endsnippet
 
@@ -64,14 +64,14 @@ snippet cdu "componentDidUpdate" b
  * @param {Object} prevProps
  * @param {Object} prevState
  */
-componentDidUpdate: function(prevProps, prevState) {
-  $0
+componentDidUpdate(prevProps, prevState) {
+	$0
 },
 endsnippet
 
 snippet cwm "componentWillMount" b
-componentWillMount: function() {
-  $0
+componentWillMount() {
+	$0
 },
 endsnippet
 
@@ -79,14 +79,14 @@ snippet cwrp "componentWillReceiveProps" b
 /**
  * @param {Object} nextProps
  */
-componentWillReceiveProps: function(nextProps) {
-  $0
+componentWillReceiveProps(nextProps) {
+	$0
 },
 endsnippet
 
 snippet cwum "componentWillUnmount" b
-componentWillUnmount: function() {
-  $0
+componentWillUnmount() {
+	$0
 },
 endsnippet
 
@@ -95,8 +95,8 @@ snippet cwu "componentWillUpdate" b
  * @param {Object} nextProps
  * @param {Object} nextState
  */
-componentWillUpdate: function(nextProps, nextState) {
-  $0
+componentWillUpdate(nextProps, nextState) {
+	$0
 },
 endsnippet
 
@@ -104,10 +104,10 @@ snippet gdp "getDefaultProps" b
 /**
  * @return {Object}
  */
-getDefaultProps: function() {
-  return {
-    $0
-  };
+getDefaultProps() {
+	return {
+		$0
+	};
 },
 endsnippet
 
@@ -115,11 +115,25 @@ snippet gis "getInitialState" b
 /**
  * @return {Object}
  */
-getInitialState: function() {
-  return {
-    $0
-  };
+getInitialState() {
+	return {
+		$0
+	};
 },
+endsnippet
+
+snippet cpt "const { PropTypes } = React;" b
+const { PropTypes } = React;
+endsnippet
+
+snippet pt "propTypes" b
+propTypes: {
+	$0
+},
+endsnippet
+
+snippet Pt "PropTypes" w
+PropTypes.$1`!p snip.rv=complete(t[1], ['array', 'bool', 'func', 'number', 'object', 'string', 'node', 'element', 'instanceOf', 'oneOf([])', 'oneOfType([])', 'arrayOf()', 'objectOf()', 'shape({})', 'any'])`,$0
 endsnippet
 
 snippet scu "shouldComponentUpdate" b
@@ -128,23 +142,36 @@ snippet scu "shouldComponentUpdate" b
  * @param {Object} nextState
  * @return {boolean}
  */
-shouldComponentUpdate: function(nextProps, nextState) {
-  return ${1:true};
+shouldComponentUpdate(nextProps, nextState) {
+	return ${1:true};
 },
 endsnippet
 
-snippet req "require"
-var `!p
-def formatVariableName(path):
-  lastPart = path.split('/')[-1]
-  if lastPart == 'underscore':
-    return '_'
-  elif lastPart == 'jquery':
-    return '$'
-  else:
-    return string.replace(lastPart.title(), '_', '');
-snip.rv = formatVariableName(t[1])
-` = require('${1}');$0
+snippet <> "<Component>" b
+<${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`}>
+	${0:${VISUAL}}
+</$1>
+endsnippet
+
+snippet < "<Component />" b
+<${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`} ${0}/>
+endsnippet
+
+# DOM
+
+snippet div "<div>" b
+<div$1>
+	${0:${VISUAL}}
+</div>
+endsnippet
+
+# Diffux-CI
+snippet dd "diffux.define" b
+diffux.define('${1:<`!p snip.rv = path_to_component_name(path, pascal_case_basename)`>}', function() {
+	return Utils.renderAttachedAndGetNode(
+		${0:${VISUAL}}
+	);
+}, { viewports: [${2:'small', 'medium'}] });
 endsnippet
 
 snippet des "describe() block" b
