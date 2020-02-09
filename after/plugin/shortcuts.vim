@@ -2,6 +2,9 @@
 
 nnoremap <Leader>j :ImportJSWord<CR>
 
+" Format file using prettier
+nnoremap gp :Prettier<CR>
+
 " Quick window navigation
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j

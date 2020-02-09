@@ -16,9 +16,12 @@ git://github.com/tpope/vim-repeat.git v1.1
 git://github.com/vim-ruby/vim-ruby.git vim7.4
 git://github.com/tpope/vim-surround.git v2.0
 git://github.com/noprompt/vim-yardoc.git
-git://github.com/wincent/Command-T.git
-git://github.com/SirVer/ultisnips.git
 git://github.com/mxw/vim-jsx
 git://github.com/pangloss/vim-javascript
 git://github.com/hail2u/vim-css3-syntax.git
 git://github.com/tpope/vim-projectionist.git
+git://github.com/AndrewRadev/splitjoin.vim.git
+git://github.com/alampros/vim-styled-jsx.git
+git://github.com/tpope/vim-eunuch.git
+git://github.com/tpope/vim-commentary.git
+git://github.com/prettier/vim-prettier.git

@@ -28,6 +28,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 let s:eslint_path = system('echo $(npm bin)/eslint')
 let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
+let g:javascript_plugin_flow = 1
+
 " Highlight the sign column same colour as the background
 autocmd BufWinEnter * call InitGutter()
 function! InitGutter()

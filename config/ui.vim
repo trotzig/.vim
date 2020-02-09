@@ -3,6 +3,9 @@
 " Enable syntax highlighting
 syntax on
 
+" Try to reuse window when switching buffers
+set switchbuf=usetab
+
 " Don't show Vim credits on startup
 set shortmess+=I
 
@@ -11,7 +14,7 @@ set number         " Show line numbers
 set laststatus=2   " Always show status line
 
 set wildmenu       " Tab-completion menu for command mode
-set wildignore+=*.o,*.pyc,*/tmp/*,*.swp,*.zip,**/node_modules/**
+set wildignore+=*.o,*.pyc,*/tmp/*,*.swp,*.zip,*/node_modules,*/dist/*
 set wildmode=list:longest,full
 
 " Start scrolling page when 10 lines from bottom/top

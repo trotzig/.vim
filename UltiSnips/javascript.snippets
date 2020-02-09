@@ -2,161 +2,6 @@ global !p
 from snippet_helpers import *
 endglobal
 
-snippet fun "function with dynamic docblock" b
-`!p
-# Currently Ultisnips does not support dynamic tabstops, so we cannot add
-# tabstops to the datatype for these param tags until that feature is added.
-def formatTag(argument):
-  return " * @param {{}} {0}".format(argument)
-
-arguments = t[2].split(',')
-arguments = [argument.strip() for argument in arguments if argument]
-
-if len(arguments):
-  tags = map(formatTag, arguments)
-  snip.rv = "/**"
-  for tag in tags:
-    snip += tag
-  snip += ' */'
-  snip += ''
-else:
-  snip.rv = ''
-`${1:name}: function(${2:arguments}) {
-  $0
-},
-endsnippet
-
-# Generates a `render` function, useful for React components.
-snippet render "render function" b
-/**
- * @return {Object}
- */
-render: function() {
-  return (
-    ${VISUAL}$0
-  );
-}
-endsnippet
-
-snippet cc "createClass" b
-const ${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`} = React.createClass({
-	/**
-	 * @return {Object}
-	 */
-	render() {
-		return (
-			$0
-		);
-	}
-});
-
-module.exports = $1;
-endsnippet
-
-snippet cdm "componentDidMount" b
-componentDidMount() {
-	$0
-},
-endsnippet
-
-snippet cdu "componentDidUpdate" b
-/**
- * @param {Object} prevProps
- * @param {Object} prevState
- */
-componentDidUpdate(prevProps, prevState) {
-	$0
-},
-endsnippet
-
-snippet cwm "componentWillMount" b
-componentWillMount() {
-	$0
-},
-endsnippet
-
-snippet cwrp "componentWillReceiveProps" b
-/**
- * @param {Object} nextProps
- */
-componentWillReceiveProps(nextProps) {
-	$0
-},
-endsnippet
-
-snippet cwum "componentWillUnmount" b
-componentWillUnmount() {
-	$0
-},
-endsnippet
-
-snippet cwu "componentWillUpdate" b
-/**
- * @param {Object} nextProps
- * @param {Object} nextState
- */
-componentWillUpdate(nextProps, nextState) {
-	$0
-},
-endsnippet
-
-snippet gdp "getDefaultProps" b
-/**
- * @return {Object}
- */
-getDefaultProps() {
-	return {
-		$0
-	};
-},
-endsnippet
-
-snippet gis "getInitialState" b
-/**
- * @return {Object}
- */
-getInitialState() {
-	return {
-		$0
-	};
-},
-endsnippet
-
-snippet cpt "const { PropTypes } = React;" b
-const { PropTypes } = React;
-endsnippet
-
-snippet pt "propTypes" b
-propTypes: {
-	$0
-},
-endsnippet
-
-snippet Pt "PropTypes" w
-PropTypes.$1`!p snip.rv=complete(t[1], ['array', 'bool', 'func', 'number', 'object', 'string', 'node', 'element', 'instanceOf', 'oneOf([])', 'oneOfType([])', 'arrayOf()', 'objectOf()', 'shape({})', 'any'])`,$0
-endsnippet
-
-snippet scu "shouldComponentUpdate" b
-/**
- * @param {Object} nextProps
- * @param {Object} nextState
- * @return {boolean}
- */
-shouldComponentUpdate(nextProps, nextState) {
-	return ${1:true};
-},
-endsnippet
-
-snippet <> "<Component>" b
-<${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`}>
-	${0:${VISUAL}}
-</$1>
-endsnippet
-
-snippet < "<Component />" b
-<${1:`!p snip.rv = path_to_component_name(path, pascal_case_basename)`} ${0}/>
-endsnippet
-
 # DOM
 
 snippet div "<div>" b
@@ -165,23 +10,8 @@ snippet div "<div>" b
 </div>
 endsnippet
 
-# Diffux-CI
-snippet dd "diffux.define" b
-diffux.define('${1:<`!p snip.rv = path_to_component_name(path, pascal_case_basename)`>}', function() {
-	return Utils.renderAttachedAndGetNode(
-		${0:${VISUAL}}
-	);
-}, { viewports: [${2:'small', 'medium'}] });
-endsnippet
-
 snippet des "describe() block" b
 describe('${1}', () => {
-  ${0:${VISUAL}}
-});
-endsnippet
-
-snippet con "context() block" b
-context('${1}', () => {
   ${0:${VISUAL}}
 });
 endsnippet
@@ -202,17 +32,4 @@ snippet it "it() block" b
 it('${1}', () => {
   ${0:${VISUAL}}
 });
-endsnippet
-
-snippet exp "expect() assertion" b
-expect(${1})${2}.to${3}(${0:${VISUAL}});
-endsnippet
-
-# Subject pattern
-snippet sub "this.subject" b
-this.subject = () => Utils.render(<${1:`!p snip.rv = pascal_case_basename(snip.basename)`} {...this.props} />);$0
-endsnippet
-
-snippet gim "this.getIntlMessage('...')" w
-this.getIntlMessage('`!p snip.rv = pascal_case_basename(snip.basename)`.${1}')${0}
 endsnippet
